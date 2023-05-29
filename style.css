@@ -325,3 +325,31 @@ footer section div {
 
 }
 
+.dark_button {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #142b46;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.dark_button:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 36px;
+  height: 36px;
+  background-color: #f4f4f1;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dark_mode .dark_button:before {
+  transform: translateX(60px);
+  background-color: #eeb035;
+}

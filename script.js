@@ -1,30 +1,8 @@
-const theme = localStorage.getItem("data-theme");
-const checkbox = document.querySelector(".switch-input");
+function toggleTheme() {
+  var body = document.body;
+  body.classList.toggle("dark_mode");
 
-const changeThemeToDark = () => {
-  document.documentElement.setAttribute("data-theme", "dark");
-  localStorage.setItem("data-theme", "dark");
-  console.log("Switched to dark theme");
-};
-
-const changeThemeToLight = () => {
-  document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("data-theme", "light");
-  console.log("Switched to light theme");
-};
-
-const handleCheckboxChange = () => {
-  const theme = localStorage.getItem("data-theme");
-  if (theme === "dark") {
-    changeThemeToLight();
-  } else {
-    changeThemeToDark();
-  }
-};
-
-if (theme === "dark") {
-  changeThemeToDark();
+  var html = document.documentElement;
+  var isDarkMode = body.classList.contains("dark_mode");
+  html.setAttribute("data-theme", isDarkMode ? "dark" : "light");
 }
-
-checkbox.addEventListener("change", handleCheckboxChange);
-
